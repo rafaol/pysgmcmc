@@ -40,7 +40,7 @@ class SamplerMixin(object):
             Tuple of numpy arrays containing last sampled values.
         """
         return tuple(
-            np.asarray(torch.tensor(parameter.data).numpy())
+            parameter.detach().clone().cpu().numpy()
             for parameter in self.params
         )
 
