@@ -76,7 +76,7 @@ class SGLD(Optimizer):
                 lr = group["lr"]
                 num_pseudo_batches = group["num_pseudo_batches"]
                 precondition_decay_rate = group["precondition_decay_rate"]
-                gradient = parameter.grad.data
+                gradient = parameter.grad
 
                 #  State initialization {{{ #
 
